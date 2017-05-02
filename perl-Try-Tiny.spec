@@ -4,7 +4,7 @@
 #
 Name     : perl-Try-Tiny
 Version  : 0.22
-Release  : 12
+Release  : 13
 URL      : http://search.cpan.org/CPAN/authors/id/D/DO/DOY/Try-Tiny-0.22.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DO/DOY/Try-Tiny-0.22.tar.gz
 Summary  : 'minimal try/catch with proper preservation of $@'

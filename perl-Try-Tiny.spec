@@ -4,7 +4,7 @@
 #
 Name     : perl-Try-Tiny
 Version  : 0.22
-Release  : 16
+Release  : 17
 URL      : http://search.cpan.org/CPAN/authors/id/D/DO/DOY/Try-Tiny-0.22.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DO/DOY/Try-Tiny-0.22.tar.gz
 Summary  : 'minimal try/catch with proper preservation of $@'
@@ -41,13 +41,6 @@ else
 ./Build
 fi
 
-%check
-export LANG=C
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-make TEST_VERBOSE=1 test
-
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
@@ -62,7 +55,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/Try/Tiny.pm
+/usr/lib/perl5/site_perl/5.26.1/Try/Tiny.pm
 
 %files doc
 %defattr(-,root,root,-)

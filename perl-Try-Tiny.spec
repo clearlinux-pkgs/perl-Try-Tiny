@@ -4,7 +4,7 @@
 #
 Name     : perl-Try-Tiny
 Version  : 0.30
-Release  : 21
+Release  : 22
 URL      : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz
 Summary  : 'Minimal try/catch with proper preservation of $@'
@@ -67,7 +67,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/Try/Tiny.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Try/Tiny.pm
 
 %files dev
 %defattr(-,root,root,-)

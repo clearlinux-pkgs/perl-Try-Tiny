@@ -4,14 +4,15 @@
 #
 Name     : perl-Try-Tiny
 Version  : 0.30
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz
-Summary  : 'Minimal try/catch with proper preservation of $@'
+Summary  : Minimal try/catch with proper localization of $@
 Group    : Development/Tools
 License  : MIT
 Requires: perl-Try-Tiny-license = %{version}-%{release}
 BuildRequires : buildreq-cpan
+BuildRequires : perl(Test::More)
 
 %description
 This archive contains the distribution Try-Tiny,
@@ -22,6 +23,7 @@ Minimal try/catch with proper preservation of $@
 Summary: dev components for the perl-Try-Tiny package.
 Group: Development
 Provides: perl-Try-Tiny-devel = %{version}-%{release}
+Requires: perl-Try-Tiny = %{version}-%{release}
 
 %description dev
 dev components for the perl-Try-Tiny package.
@@ -67,7 +69,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1/Try/Tiny.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Try/Tiny.pm
 
 %files dev
 %defattr(-,root,root,-)

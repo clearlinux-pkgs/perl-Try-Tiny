@@ -4,13 +4,14 @@
 #
 Name     : perl-Try-Tiny
 Version  : 0.30
-Release  : 30
+Release  : 31
 URL      : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz
-Summary  : Minimal try/catch with proper localization of $@
+Summary  : 'Minimal try/catch with proper preservation of $@'
 Group    : Development/Tools
 License  : MIT
 Requires: perl-Try-Tiny-license = %{version}-%{release}
+Requires: perl-Try-Tiny-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Test::More)
 
@@ -37,14 +38,24 @@ Group: Default
 license components for the perl-Try-Tiny package.
 
 
+%package perl
+Summary: perl components for the perl-Try-Tiny package.
+Group: Default
+Requires: perl-Try-Tiny = %{version}-%{release}
+
+%description perl
+perl components for the perl-Try-Tiny package.
+
+
 %prep
 %setup -q -n Try-Tiny-0.30
+cd %{_builddir}/Try-Tiny-0.30
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -56,7 +67,7 @@ fi
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Try-Tiny
-cp LICENCE %{buildroot}/usr/share/package-licenses/perl-Try-Tiny/LICENCE
+cp %{_builddir}/Try-Tiny-0.30/LICENCE %{buildroot}/usr/share/package-licenses/perl-Try-Tiny/7e8e33f9e95ab89effb710036a61ace6a226a6c0
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -69,7 +80,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Try/Tiny.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -77,4 +87,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Try-Tiny/LICENCE
+/usr/share/package-licenses/perl-Try-Tiny/7e8e33f9e95ab89effb710036a61ace6a226a6c0
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Try/Tiny.pm

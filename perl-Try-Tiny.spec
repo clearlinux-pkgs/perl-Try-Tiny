@@ -4,7 +4,7 @@
 #
 Name     : perl-Try-Tiny
 Version  : 0.30
-Release  : 38
+Release  : 39
 URL      : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz
 Summary  : 'Minimal try/catch with proper preservation of $@'

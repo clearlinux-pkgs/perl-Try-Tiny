@@ -7,7 +7,7 @@
 #
 Name     : perl-Try-Tiny
 Version  : 0.32
-Release  : 49
+Release  : 50
 URL      : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.32.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.32.tar.gz
 Summary  : 'Minimal try/catch with proper preservation of $@'
